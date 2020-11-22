@@ -36,12 +36,12 @@ namespace CompareAges
                 Age = age2
             };
 
-            var outPut = OlderPersonIs(firstPerson, secondPerson);
+            var outPut = OldestPersonIs(firstPerson, secondPerson);
 
             Console.WriteLine("A pessoa mais velha: {0}", outPut);
         }
 
-        public static string OlderPersonIs(Person firstPerson, Person secondPerson)
+        public static string OldestPersonIs(Person firstPerson, Person secondPerson)
         {
             string olderPerson;
             if (firstPerson.Age > secondPerson.Age)
