@@ -4,9 +4,26 @@ namespace ProdutosEstoque
 {
     public class Produto
     {
-        public string Nome { get; set; }
-        public double Preco { get; set; }
-        public int Quantidade { get; set; }
+        public string Nome;
+        public double Preco;
+        public int Quantidade;
+
+        public Produto() 
+        { 
+        }
+
+        public Produto(string nome, double preco)
+        {
+            Nome = nome;
+            Preco = preco;
+        }
+
+        public Produto(string nome, double preco, int quantidade)
+        {
+            Nome = nome;
+            Preco = preco;
+            Quantidade = quantidade;
+        }
 
         public double ValorTotalEmEstoque()
         {
