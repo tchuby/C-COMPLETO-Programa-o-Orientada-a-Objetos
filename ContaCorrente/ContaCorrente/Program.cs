@@ -26,9 +26,9 @@ namespace ContaCorrente
             Conta conta = new Conta( nConta, nomeTitular);
 
             Console.Write(condicaoDepositoInicial);
-            string condDepositoInicial = Console.ReadLine();
+            char condDepositoInicial = char.Parse(Console.ReadLine());
 
-            if (condDepositoInicial == "s")
+            if (condDepositoInicial == 's')
             {
                 Console.Write(entrarDepositoInicial);
                 double depositoInicial = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
