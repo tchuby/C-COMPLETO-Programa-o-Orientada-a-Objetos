@@ -30,5 +30,12 @@ namespace ContaCorrente
         {
             return _saldo.ToString("F2", CultureInfo.InvariantCulture);
         }
+
+        public override string ToString()
+        {
+            return "Conta " + IdConta +
+                   ", Titular: " + NomeTitular +
+                   ", Saldo: $" + GetSaldo();
+        }
     }
 }

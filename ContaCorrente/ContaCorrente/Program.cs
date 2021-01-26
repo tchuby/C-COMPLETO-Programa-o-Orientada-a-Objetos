@@ -54,9 +54,7 @@ namespace ContaCorrente
 
         public static void Atualizar(Conta conta)
         {
-            Console.WriteLine("Conta " + conta.IdConta +
-                              ", Titular: " + conta.NomeTitular +
-                              ", Saldo: $" + conta.GetSaldo());
+            Console.WriteLine(conta);
             Console.WriteLine();
         }
     }
