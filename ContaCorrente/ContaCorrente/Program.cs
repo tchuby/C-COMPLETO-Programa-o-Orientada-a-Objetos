@@ -3,28 +3,27 @@ using System.Globalization;
 
 namespace ContaCorrente
 {
-    class Program
+    static class Program
     {
-        private static NumberStyles cultureInfo;
-
         static void Main(string[] args)
         {
             Operar();
-            Console.ReadKey();
         }
-        
+
         static void Operar()
         {
-            string numeroConta = "Entre o número da conta:";
-            string entrarNome = "Entre o titular da conta:";
-            string condicaoDepositoInicial = "Havera depósito inicial (s/n)?";
-            string entrarDepositoInicial = "Entre o valor de depósito inicial:";
+            string numeroConta = "Entre o número da conta: ";
+            string entrarNome = "Entre o titular da conta: ";
+            string condicaoDepositoInicial = "Haverá depósito inicial (s/n)? ";
+            string entrarDepositoInicial = "Entre o valor do depósito inicial: ";
 
             Console.Write(numeroConta);
             int nConta = int.Parse(Console.ReadLine());
 
             Console.Write(entrarNome);
             string nomeTitular = Console.ReadLine();
+
+            Conta conta = new Conta( nConta, nomeTitular);
 
             Console.Write(condicaoDepositoInicial);
             string condDepositoInicial = Console.ReadLine();
@@ -33,7 +32,32 @@ namespace ContaCorrente
             {
                 Console.Write(entrarDepositoInicial);
                 double depositoInicial = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            }                
+                conta.Depositar(depositoInicial);
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Dados da conta: ");
+            Atualizar(conta);
+
+            Console.Write("Entre um valor para depósito: ");
+            double deposito = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            conta.Depositar(deposito);
+            Console.WriteLine("Dados da conta atualizados: ");
+            Atualizar(conta);
+
+            Console.Write("Entre um valor para saque: ");
+            double saque = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            conta.Sacar(saque);
+            Console.WriteLine("Dados da conta atualizados: ");
+            Atualizar(conta);          
+        }
+
+        public static void Atualizar(Conta conta)
+        {
+            Console.WriteLine("Conta " + conta.IdConta +
+                              ", Titular: " + conta.NomeTitular +
+                              ", Saldo: $" + conta.GetSaldo());
+            Console.WriteLine();
         }
     }
 }
