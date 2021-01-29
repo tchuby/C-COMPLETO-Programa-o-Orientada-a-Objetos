@@ -14,8 +14,8 @@ namespace ExercicosVetores
 
             var average = AverageVector(vect);
 
-            Console.WriteLine("AVERAGE HEIGT = " + average.ToString("F2", 
-                CultureInfo.InvariantCulture));
+            Console.WriteLine("AVERAGE HEIGT = " + average.ToString
+                ("F2", CultureInfo.InvariantCulture));
         }
 
         public static double[] CreateVector(int quantity)
