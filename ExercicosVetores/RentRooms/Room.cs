@@ -14,7 +14,8 @@
 
         public Room(int number, Tenant tenant)
         {
-
+            Number = number;
+            Tenant = tenant;
         }
 
         public static Room Create(int number)
@@ -27,11 +28,26 @@
             return room;
         }
 
-        public static Room Update(int number, string name, string email)
+        public static Room Update(Room room, int number, string name, string email)
         {
             var tenant = Tenant.Create(name, email);
-            
 
+            room.Number = number;
+            room.Tenant = tenant;
+            room._rented = true;
+
+            return room;
+        }
+
+        public static Room[] GetRooms(Room[] rooms)
+        {
+            return rooms;
+        }
+
+        public override string ToString()
+        {
+            var write = Number + ": " + Tenant.Name + ", " + Tenant.Email;
+            return write;
         }
     }
 }
