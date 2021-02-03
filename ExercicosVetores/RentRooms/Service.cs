@@ -56,7 +56,7 @@ namespace RentRooms
         {
             foreach( var room in rooms)
             { 
-                if(room.Tenant != null)
+                if(room._rented)
                 {
                     Console.WriteLine(room);
                 }

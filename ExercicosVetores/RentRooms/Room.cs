@@ -2,7 +2,7 @@
 {
     public class Room
     {
-        private bool _rented = false;
+        public bool _rented { get; set; } = false;
 
         public int Number { get; set; }
         public Tenant Tenant { get; set; }
